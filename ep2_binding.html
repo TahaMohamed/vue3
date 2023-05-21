@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        html, body{
+            height: 100%;
+        }
+        body{
+            display: grid;
+            place-items: center;
+        }
+        .text-red{
+            color: red;
+        }
+        .text-green{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button :class="isActive ? 'text-red' : 'text-green'" @click="toggle">Click Me</button>
+</div>
+
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                isActive: true
+            }
+        },
+        methods: {
+            toggle(){
+                this.isActive = ! this.isActive
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>
