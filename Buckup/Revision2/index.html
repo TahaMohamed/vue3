@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn Vue3</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body class="h-full grid place-items-center bg-gray-800 text-white">
+<div id="app">
+    <h2>Number is {{ number }}</h2>
+    <!--    Events & Modifiers-->
+    <button @click="increment">Increment</button>
+    <button @click="decrement">Decrement</button>
+    <p>
+        <a href="//example.com" @click.prevent>Prevent Action</a><br>
+        <a href="//example.com" @click.once="clickOneTime">One Time Action</a>
+    </p>
+    <!--    Keyboard Events & Modifiers -->
+    <input type="text" @keyup="printName"><br>
+    <input type="text" @keydown="printName"><br>
+    <input type="text" @keydown.enter="printName"><br>
+    <input type="text" @keydown.alt.enter="printName"><br>
+    <hr>
+    <!--    Two ways to data binding (v-model)-->
+    <label for="nameId"> Username
+        <input type="text" name="username" v-model="name" id="nameId">
+        <span>{{name}}</span>
+    </label>
+    <br>
+    <label for="phoneId">Phone
+        <input type="text" name="phone" v-model="phone" id="phoneId">
+        <span>{{phone}}</span>
+    </label>
+
+<!--    Practice on data binding-->
+
+    <h1>Register Form</h1>
+    <form @submit.prevent="register">
+        <label>Username</label>
+        <input type="text" v-model="username"><br>
+        <label>Email</label>
+        <input type="email" v-model="email"><br>
+        <label>Password</label>
+        <input type="password" v-model="password"><br>
+        <button type="submit">Register</button>
+    </form>
+
+</div>
+<script src="./script.js"></script>
+</body>
+</html>

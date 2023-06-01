@@ -32,20 +32,12 @@ export default {
         assignments: Array,
         title: String
     },
-    data(){
-        return {
-            currentTag: 'all'
-        }
-    },
     computed: {
         filteredAssignments(){
             if (this.currentTag === 'all'){
                 return this.assignments;
             }
             return this.assignments.filter(a => a.tag === this.currentTag);
-        },
-        tags(){
-            return ['all', ...new Set(this.assignments.map(a => a.tag))]
         }
     }
 }
